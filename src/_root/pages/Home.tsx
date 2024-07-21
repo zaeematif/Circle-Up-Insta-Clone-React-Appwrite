@@ -2,7 +2,6 @@ import { useGetRecentPosts } from "@/components/lib/react-query/queriesAndMutati
 import Loader from "@/components/shared/Loader";
 import PostCard from "@/components/shared/PostCard";
 import { Models } from "appwrite";
-import { useState } from "react";
 
 const Home = () => {
   const { data: posts, isPending: isPostLoading } = useGetRecentPosts();
