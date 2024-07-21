@@ -25,6 +25,8 @@ const PostStats = ({
   const [likes, setLikes] = useState<string[]>(likesList);
   const [comment, setComment] = useState<string[]>(totalComment);
 
+  setComment(totalComment);
+
   const { mutate: likePost } = useLikePost();
 
   const handleLikePost = (
