@@ -60,7 +60,7 @@ const SigninForm = () => {
     } else {
       return toast({
         variant: "destructive",
-        title: "Sign Up Failed! Please Try Again",
+        title: "Signin Failed! Please Try Again",
       });
     }
   }
