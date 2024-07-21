@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import PostStats  from "@/components/shared/PostStats"
 import { useUserContext } from "@/context/AuthContext";
+import { useState } from "react";
 
 type GridPostListProps = {
   posts: Models.Document[];
@@ -16,6 +17,9 @@ const GridPostList = ({
   showStats = true,
 }: GridPostListProps) => {
   const { user } = useUserContext();
+
+  const [openComment, setOpenComment] = useState(false);
+
 
   return (
     <ul className="grid-container">
@@ -43,7 +47,7 @@ const GridPostList = ({
                 <p className="line-clamp-1">{post.creator.name}</p>
               </div>
             )}
-            {showStats && <PostStats post={post} userId={user.id} />}
+            {showStats && <PostStats post={post} userId={user.id} openComment={openComment} setOpenComment={setOpenComment} />}
           </div>
         </li>
       ))}
